@@ -1,0 +1,25 @@
+/* Recipe Grid Styles */
+.recipes-grid {
+  margin-bottom: 3rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--gap);
+  margin-top: 2rem;
+}
+
+.no-recipes {
+  text-align: center;
+  padding: 4rem 0;
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}

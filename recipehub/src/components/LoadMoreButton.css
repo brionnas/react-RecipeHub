@@ -1,0 +1,40 @@
+/* Load More Button Styles */
+.load-more {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.load-more .btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.load-more .btn:hover:not(:disabled) {
+  background: #FF5722;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px var(--shadow);
+}
+
+.load-more .btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.load-more .loading {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+}

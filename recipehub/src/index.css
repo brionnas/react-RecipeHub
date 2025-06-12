@@ -1,0 +1,77 @@
+:root {
+  /* Color Scheme - Warm & Inviting */
+  --primary: #D2691E;        /* Chocolate orange */
+  --secondary: #8B4513;      /* Saddle brown */
+  --accent: #FF6B35;         /* Coral red */
+  --bg: #FFF8F0;            /* Warm white */
+  --card-bg: #FFFFFF;       /* Pure white for cards */
+  --text: #2C1810;          /* Dark brown */
+  --text-light: #6B4E3D;    /* Medium brown */
+  --border: #E6D5C3;        /* Light beige */
+  --success: #228B22;       /* Forest green */
+  --shadow: rgba(139, 69, 19, 0.1);
+  
+  /* Layout */
+  --max-width: 1200px;
+  --gap: 1.5rem;
+  --border-radius: 12px;
+  --transition: all 0.3s ease;
+  
+  /* Typography */
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gap);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Additional base styles for React components */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure smooth transitions globally */
+*, *::before, *::after {
+  transition: var(--transition);
+}
+
+/* Focus styles for accessibility */
+*:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}

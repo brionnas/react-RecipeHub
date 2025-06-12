@@ -1,0 +1,44 @@
+/* Sidebar.css */
+
+.sidebar {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px var(--shadow);
+  max-width: 300px;
+}
+
+.sidebar h2 {
+  font-size: 1.3rem;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.sidebar ul li {
+  margin-bottom: 0.5rem;
+  color: var(--text-light);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sidebar ul li i {
+  color: var(--primary);
+}
+
+.sidebar .tip {
+  background: var(--bg);
+  padding: 1rem;
+  border-left: 4px solid var(--accent);
+  border-radius: var(--border-radius);
+  color: var(--text-light);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}

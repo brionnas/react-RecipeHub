@@ -1,0 +1,87 @@
+.page-header {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  text-align: center;
+  padding: 3rem 0;
+  margin-bottom: 3rem;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.page-header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.submit-page {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 15px var(--shadow);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.submit-page h2 {
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.submit-page p {
+  color: var(--text-light);
+  margin-bottom: 2rem;
+}
+
+form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+form .form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+form .form-group input,
+form .form-group textarea,
+form .form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--border);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: var(--transition);
+  background: var(--card-bg);
+  color: var(--text);
+}
+
+form .form-group input:focus,
+form .form-group textarea:focus,
+form .form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(210, 105, 30, 0.1);
+}
+
+form button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+form button:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px var(--shadow);
+}

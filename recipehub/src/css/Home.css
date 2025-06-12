@@ -1,0 +1,37 @@
+section {
+  margin: 3rem 0;
+}
+
+/* Main Content Layout */
+main {
+  flex: 1;
+}
+
+/* Container for main content sections */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gap);
+}
+
+/* Additional spacing for main content area */
+main > .container {
+  padding-top: 0;
+}
+
+/* General responsive adjustments */
+@media (max-width: 768px) {
+  section {
+    margin: 2rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    margin: 1.5rem 0;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+}

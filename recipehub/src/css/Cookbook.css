@@ -1,0 +1,33 @@
+/* Cookbook-specific styles */
+/* Cookbook Page Styles */
+.cookbook-two-col {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+
+.cookbook-main {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cookbook-two-col {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cookbook-two-col {
+    gap: 1.5rem;
+  }
+  
+  .cookbook-main {
+    gap: 2rem;
+  }
+}
