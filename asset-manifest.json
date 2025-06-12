@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/react-RecipeHub/static/css/main.d9a242d0.css",
-    "main.js": "/react-RecipeHub/static/js/main.e8a4f866.js",
-    "index.html": "/react-RecipeHub/index.html",
-    "main.d9a242d0.css.map": "/react-RecipeHub/static/css/main.d9a242d0.css.map",
-    "main.e8a4f866.js.map": "/react-RecipeHub/static/js/main.e8a4f866.js.map"
+    "main.css": "/react-RecipeHub/recipehub/static/css/main.d9a242d0.css",
+    "main.js": "/react-RecipeHub/recipehub/static/js/main.e8a4f866.js",
+    "index.html": "/react-RecipeHub/recipehub/index.html",
+    "main.d9a242d0.css.map": "/react-RecipeHub/recipehub/static/css/main.d9a242d0.css.map",
+    "main.e8a4f866.js.map": "/react-RecipeHub/recipehub/static/js/main.e8a4f866.js.map"
   },
   "entrypoints": [
     "static/css/main.d9a242d0.css",
