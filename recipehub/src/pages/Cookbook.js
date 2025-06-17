@@ -5,8 +5,9 @@ import Footer from '../components/Footer';
 import StatsGrid from '../components/StatsGrid';
 import MealPlanner from '../components/MealPlanner';
 import CookbookSidebar from '../components/Sidebar';
-import RecipeGrid from '../components/RecipeGrid'; // Swapped component
+import RecipeGrid from '../components/LatestRecipes';
 import '../css/Cookbook.css';
+import LatestRecipes from '../components/LatestRecipes';
 
 const Cookbook = () => {
   const [shoppingList, setShoppingList] = useState([
@@ -58,7 +59,7 @@ const Cookbook = () => {
 
           <div className="cookbook-two-col">
             <div className="cookbook-main">
-              <RecipeGrid /> {/* Display recipes here */}
+              <LatestRecipes /> {/* Display recipes here */}
               <MealPlanner />
             </div>
 

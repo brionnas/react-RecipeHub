@@ -1,31 +1,50 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Slideshow from '../components/Slideshow';
 import '../css/Contact.css';
 
 const Contact = () => {
-  useEffect(() => {
-    const script1 = document.createElement('script');
-    script1.src = '/toggleMenu.js';
-    script1.defer = true;
-    document.body.appendChild(script1);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [responseMessage, setResponseMessage] = useState('');
 
-    const script2 = document.createElement('script');
-    script2.src = '/form.js';
-    script2.defer = true;
-    document.body.appendChild(script2);
 
-    const script3 = document.createElement('script');
-    script3.src = '/slideshow.js';
-    script3.defer = true;
-    document.body.appendChild(script3);
+  // Handle form input changes
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
 
-    return () => {
-      document.body.removeChild(script1);
-      document.body.removeChild(script2);
-      document.body.removeChild(script3);
-    };
-  }, []);
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    try {
+      // Simulate form submission (replace with your actual API call)
+      setResponseMessage('Sending...');
+      
+      // Replace this with your actual form submission logic
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      setResponseMessage('✅ Message sent successfully!');
+      setFormData({ name: '', email: '', message: '' });
+      
+      // Clear success message after 3 seconds
+      setTimeout(() => setResponseMessage(''), 3000);
+    } catch (error) {
+      setResponseMessage('❌ Failed to send message. Please try again.');
+      setTimeout(() => setResponseMessage(''), 3000);
+    }
+  };
+
+
 
   return (
     <>
@@ -40,23 +59,47 @@ const Contact = () => {
 
         <div className="container two-col">
           {/* Contact Form */}
-          <form id="contactForm" className="contact-form">
+          <form id="contactForm" className="contact-form" onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="name">Name</label>
-              <input id="name" type="text" required placeholder="Your Name" />
+              <input 
+                id="name" 
+                type="text" 
+                required 
+                placeholder="Your Name"
+                value={formData.name}
+                onChange={handleInputChange}
+              />
             </div>
             <div className="form-group">
               <label htmlFor="email">Email</label>
-              <input id="email" type="email" required placeholder="Your Email" />
+              <input 
+                id="email" 
+                type="email" 
+                required 
+                placeholder="Your Email"
+                value={formData.email}
+                onChange={handleInputChange}
+              />
             </div>
             <div className="form-group">
               <label htmlFor="message">Message</label>
-              <textarea id="message" required placeholder="Your Message"></textarea>
+              <textarea 
+                id="message" 
+                required 
+                placeholder="Your Message"
+                value={formData.message}
+                onChange={handleInputChange}
+              ></textarea>
             </div>
             <button type="submit" className="btn">
               <i className="fas fa-paper-plane"></i> Send Message
             </button>
-            <p id="responseMessage" style={{ marginTop: '1rem' }}></p>
+            {responseMessage && (
+              <p id="responseMessage" style={{ marginTop: '1rem', color: responseMessage.includes('✅') ? 'green' : 'red' }}>
+                {responseMessage}
+              </p>
+            )}
           </form>
 
           {/* Video & Slideshow */}
@@ -72,12 +115,7 @@ const Contact = () => {
 
             <div style={{ marginTop: '2rem' }}>
               <h3>🍽️ Recipe Slideshow</h3>
-              <img
-                id="slideshow"
-                src="/images/margherita.jpg"
-                alt="Slideshow"
-                style={{ width: '100%', borderRadius: '12px', height: '200px', objectFit: 'cover' }}
-              />
+              <Slideshow />
             </div>
           </aside>
         </div>
