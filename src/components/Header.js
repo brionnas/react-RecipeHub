@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import './Header.css';
 
-
 function Header() {
   const { pathname } = useLocation();
+  const [isOpen, setIsOpen] = useState(false); 
+
+  const toggleMenu = () => setIsOpen(!isOpen); 
 
   return (
     <header>
@@ -13,7 +15,7 @@ function Header() {
           <div className="logo">
             <i className="fas fa-utensils"></i> RecipeHub
           </div>
-          <nav id="mainNav">
+          <nav id="mainNav" className={isOpen ? "active" : ""}>
             <ul>
               <li><Link to="/" className={pathname === "/" ? "active" : ""}>Home</Link></li>
               <li><Link to="/browse" className={pathname === "/browse" ? "active" : ""}>Browse Recipes</Link></li>
@@ -23,7 +25,11 @@ function Header() {
               <li><Link to="/contact" className={pathname === "/contact" ? "active" : ""}>Contact</Link></li>
             </ul>
           </nav>
-          <button className="mobile-menu-toggle" id="mobileMenuToggle">
+          <button 
+            className="mobile-menu-toggle" 
+            id="mobileMenuToggle" 
+            onClick={toggleMenu}
+          >
             <i className="fas fa-bars"></i>
           </button>
         </div>

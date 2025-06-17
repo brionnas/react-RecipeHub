@@ -24,25 +24,36 @@ const Contact = () => {
 
   // Handle form submission
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    
-    try {
-      // Simulate form submission (replace with your actual API call)
-      setResponseMessage('Sending...');
-      
-      // Replace this with your actual form submission logic
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
+  e.preventDefault();
+
+  try {
+    setResponseMessage('Sending...');
+
+    const formPayload = new FormData();
+formPayload.append('access_key', 'be2b2acf-4b64-4ed1-831f-c78b88df116d'); 
+formPayload.append('name', formData.name);
+formPayload.append('email', formData.email);
+formPayload.append('message', formData.message);
+
+const response = await fetch('https://api.web3forms.com/submit', {
+  method: 'POST',
+  body: formPayload
+});
+
+
+    if (response.ok) {
       setResponseMessage('✅ Message sent successfully!');
       setFormData({ name: '', email: '', message: '' });
-      
-      // Clear success message after 3 seconds
-      setTimeout(() => setResponseMessage(''), 3000);
-    } catch (error) {
-      setResponseMessage('❌ Failed to send message. Please try again.');
-      setTimeout(() => setResponseMessage(''), 3000);
+    } else {
+      throw new Error();
     }
-  };
+  } catch (error) {
+    setResponseMessage('❌ Failed to send message. Please try again.');
+  }
+
+  setTimeout(() => setResponseMessage(''), 3000);
+};
+
 
 
 

@@ -22,7 +22,7 @@ const Browse = () => {
   const fetchRecipes = async () => {
     try {
       setLoading(true);
-      const response = await fetch("https://brionnas.github.io/projects/part6/json/recipes.json");
+      const response = await fetch("https://recipehub-serverside.onrender.com/api/recipes");
 
       if (!response.ok) {
         throw new Error('Failed to fetch recipes');
@@ -99,3 +99,4 @@ const Browse = () => {
 };
 
 export default Browse;
+

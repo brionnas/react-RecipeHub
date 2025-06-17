@@ -1,7 +1,23 @@
-/* Header & Navigation */
+
+.mobile-menu-toggle {
+  display: block;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  position: relative;
+  z-index: 9999;
+}
+
+
+
+
+
+
+/* Original styles */
 header {
-  background: var(--card-bg);
-  box-shadow: 0 2px 10px var(--shadow);
+  background: var(--card-bg, #ffffff);
+  box-shadow: 0 2px 10px var(--shadow, rgba(0,0,0,0.1));
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -11,13 +27,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem var(--gap);
+  padding: 1rem var(--gap, 1rem);
 }
 
 .logo {
   font-size: 1.8rem;
   font-weight: bold;
-  color: var(--primary);
+  color: var(--primary, #007bff);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -32,33 +48,24 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: var(--text);
+  color: var(--text, #333);
   font-weight: 500;
   padding: 0.5rem 1rem;
-  border-radius: var(--border-radius);
-  transition: var(--transition);
+  border-radius: var(--border-radius, 4px);
+  transition: var(--transition, all 0.3s ease);
   position: relative;
 }
 
 nav a:hover,
 nav a.active {
-  background: var(--primary);
+  background: var(--primary, #007bff);
   color: white;
   transform: translateY(-2px);
 }
 
-.mobile-menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  color: var(--primary);
-  cursor: pointer;
-}
-
 /* Page Header */
 .page-header {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background: linear-gradient(135deg, var(--primary, #007bff), var(--secondary, #6c757d));
   color: white;
   text-align: center;
   padding: 3rem 0;
@@ -77,16 +84,16 @@ nav a.active {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .nav-container nav {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    background: var(--card-bg);
-    box-shadow: 0 4px 15px var(--shadow);
-    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    background: var(--card-bg, #ffffff);
+    box-shadow: 0 4px 15px var(--shadow, rgba(0,0,0,0.1));
+    border-radius: 0 0 var(--border-radius, 4px) var(--border-radius, 4px);
   }
 
   .nav-container nav.active {
@@ -103,13 +110,11 @@ nav a.active {
     display: block;
     padding: 1rem;
     border-radius: 0;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--border, #eee);
   }
+}
 
-  .mobile-menu-toggle {
-    display: block;
-  }
-
+@media (max-width: 768px) {
   .page-header h1 {
     font-size: 2rem;
   }
@@ -119,6 +124,9 @@ nav a.active {
   .page-header {
     padding: 2rem 0;
   }
+ 
+
+
 
   .page-header h1 {
     font-size: 1.8rem;
@@ -132,3 +140,4 @@ nav a.active {
     font-size: 1.5rem;
   }
 }
+

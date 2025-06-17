@@ -4,7 +4,7 @@ import './MealPlanner.css';
 const MealPlanner = () => {
   const [selectedWeek, setSelectedWeek] = useState('current');
   
-  // Get current date and generate week days
+ 
   const getCurrentWeekDays = () => {
     const today = new Date();
     const currentDay = today.getDay();
@@ -36,12 +36,12 @@ const MealPlanner = () => {
 
   const handleAddMeal = () => {
     console.log('Add meal clicked');
-    // Implement add meal functionality
+   
   };
 
   const handleDayClick = (day) => {
     console.log('Day clicked:', day);
-    // Implement day selection functionality
+    
   };
 
   return (

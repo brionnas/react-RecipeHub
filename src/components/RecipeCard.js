@@ -9,13 +9,13 @@ const RecipeCard = ({ recipe, onClick }) => {
   const handleSaveClick = (e) => {
     e.stopPropagation();
     console.log('Save recipe:', recipe.title);
-    // Add real save logic here
+   
   };
 
   const handleShareClick = (e) => {
     e.stopPropagation();
     console.log('Share recipe:', recipe.title);
-    // Add real share logic here
+    
   };
 
   const renderStars = (rating) => {
