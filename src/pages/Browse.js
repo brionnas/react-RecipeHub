@@ -6,6 +6,7 @@ import FiltersSection from '../components/FiltersSection';
 import RecipeGrid from '../components/RecipeGrid';
 import LoadMoreButton from '../components/LoadMoreButton';
 import RecipeModal from '../components/RecipeModal';
+import { useLocation } from 'react-router-dom';
 import '../css/Browse.css';
 
 const Browse = () => {
@@ -15,9 +16,12 @@ const Browse = () => {
   const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  useEffect(() => {
-    fetchRecipes();
-  }, []);
+ const location = useLocation();
+
+useEffect(() => {
+  fetchRecipes();
+}, [location.search]);
+
 
   const fetchRecipes = async () => {
     try {
